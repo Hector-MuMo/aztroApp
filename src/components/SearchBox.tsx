@@ -11,14 +11,14 @@ const SearchBox = ({ onSelection }: SearchBoxProps) => {
         <div className='search-box'>
             <div className='titles'>
                 <h1>Aztro App</h1>
-                <h2>Search your Zodiacal Sign</h2>
+                <h2>Search your Zodiac Sign</h2>
             </div>
             <div className='message'>
-                <p>Enter your Zodiacal sign and wait for your fortune</p>
+                <p>Enter your Zodiac sign and wait for your fortune</p>
             </div>
             <div className='input-search'>
                 <label>
-                    Zodiacal Sign
+                    Zodiac Sign
                 </label>
                 <select onChange={(e) => onSelection(e.target.value)}>
                     <option value="aries">Aries</option>
