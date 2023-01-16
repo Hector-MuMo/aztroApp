@@ -63,5 +63,5 @@ jobs:
         with:
           fetch-depth: 0
       - name: Last build to check if it's a push
-        if: ${{ github.event-name == "push" }}
+        if: ${{ github.event-name == 'push' }}
         run: npm run build
