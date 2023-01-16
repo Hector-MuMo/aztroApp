@@ -32,8 +32,8 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.2
         with:
-          name: dist
-          path: dist
+          name: build
+          path: build
 
   test:
     needs: [build]
@@ -50,8 +50,8 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.2
         with:
-          name: dist
-          path: dist
+          name: build
+          path: build
       - name: Test
         run: npm run test
 
