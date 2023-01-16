@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import SearchBox from '../components/SearchBox';
 
 test('renders learn react link', () => {
-    render(<App />);
-    const linkElement = screen.getByText(/test react/i);
+    render(<SearchBox onSelection={() => { }} />);
+    const linkElement = screen.getByText(/Aztro App/i);
     expect(linkElement).toBeInTheDocument();
 });

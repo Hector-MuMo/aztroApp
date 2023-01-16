@@ -1,0 +1,16 @@
+.zodiac-card-container {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #ffffff30;
+    z-index: 10;
+    color: #fddfa0;
+    text-shadow: 0px 0px 5px;
+    border-radius: 10%;
+}
+
+.zodiac-card-info {
+    text-align: justify;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+}
