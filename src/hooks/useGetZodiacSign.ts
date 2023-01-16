@@ -35,6 +35,7 @@ const useGetZodiacSign = (ZodiacSign: string, day: string) => {
 
     useEffect(() => {
         get()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ZodiacSign]);
 
     return { zodiac }
