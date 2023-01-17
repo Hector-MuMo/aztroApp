@@ -1,26 +1,25 @@
 import React from 'react'
+import logo from "../images/1.png"
 import "../Style/SearchBox.css"
 
+
 interface SearchBoxProps {
-    onSelection: (value: string) => void
+    onSelectionZodiac: (value: string) => void,
+    onSelectionDay: (value: string) => void,
 }
 
-const SearchBox = ({ onSelection }: SearchBoxProps) => {
+const SearchBox = ({ onSelectionZodiac, onSelectionDay }: SearchBoxProps) => {
 
     return (
         <div className='search-box'>
             <div className='titles'>
-                <h1>Aztro App</h1>
-                <h2>Search your Zodiac Sign</h2>
-            </div>
-            <div className='message'>
-                <p>Enter your Zodiac sign and wait for your fortune</p>
+                <figure className='logo'>
+                    <img src={logo} alt="logo" />
+                </figure>
             </div>
             <div className='input-search'>
-                <label>
-                    Zodiac Sign
-                </label>
-                <select onChange={(e) => onSelection(e.target.value)}>
+                <h2>Take a look your Horoscope</h2>
+                <select onChange={(e) => onSelectionZodiac(e.target.value)}>
                     <option value="aries">Aries</option>
                     <option value="taurus">Taurus</option>
                     <option value="gemini">Gemini</option>
@@ -33,6 +32,12 @@ const SearchBox = ({ onSelection }: SearchBoxProps) => {
                     <option value="capricorn">Capricorn</option>
                     <option value="aquarius">Aquarius</option>
                     <option value="pisces">Pisces</option>
+                </select>
+                <h2>Choose a day</h2>
+                <select onChange={(e) => onSelectionDay(e.target.value)}>
+                    <option value="today">Today</option>
+                    <option value="tomorrow">Tomorrow</option>
+                    <option value="yesterday">Yesterday</option>
                 </select>
             </div>
         </div>

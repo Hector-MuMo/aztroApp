@@ -11,7 +11,8 @@ import useGetZodiacSign from './hooks/useGetZodiacSign';
 
 function App() {
     const [zodiacChoosen, setZodiacChoosen] = useState("aries");
-    const { zodiac } = useGetZodiacSign(zodiacChoosen, "today")
+    const [dayChoosen, setDayChoosen] = useState("today");
+    const { zodiac } = useGetZodiacSign(zodiacChoosen, dayChoosen)
     const configs: ISourceOptions = {
         background: { color: "#111" },
         particles: {
@@ -85,6 +86,10 @@ function App() {
         setZodiacChoosen(value)
     }
 
+    const handleDayChoosen = (value: string) => {
+        setDayChoosen(value)
+    }
+
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadFull(engine)
     }, [])
@@ -94,8 +99,8 @@ function App() {
         <div className="App">
             <Particles options={configs} init={particlesInit} />
             <main>
-                <SearchBox onSelection={handleZodiacChoosen} />
-                <ZodiacCard zodiac={zodiac} />
+                <SearchBox onSelectionZodiac={handleZodiacChoosen} onSelectionDay={handleDayChoosen} />
+                <ZodiacCard zodiac={zodiac} zodiacName={zodiacChoosen} />
             </main>
         </div>
     );
